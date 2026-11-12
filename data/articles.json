@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "id": "001",
+    "title": "The Internet of Physical AI Agents: Interoperability, Longevity, and the Cost of Getting It Wrong",
+    "authors": "Roberto Morabito and Mallik Tatipamula ",
+    "year": 2026,
+    "abstract": "The Internet has evolved by progressively expanding\nwhat humanity connects: first computers, then people, and later\nbillions of devices through the Internet of Things (IoT). While\nIoT succeeded in digitizing perception at scale, it also exposed\nfundamental limitations, including fragmentation, weak security,\nlimited autonomy, and poor long-term sustainability. Today,\nadvances in edge hardware, sensing, connectivity, and artificial\nintelligence enable a new phase: the Internet of Physical AI\nAgents. Unlike IoT devices that primarily sense and report, Physical AI Agents perceive, reason, and act in real time, operating\nautonomously and cooperatively across safety-critical domains\nsuch as disaster response, healthcare, industrial automation, and\nmobility. However, embedding fast-evolving AI capabilities into\nlong-lived physical infrastructure introduces new architectural\nrisks, particularly around interoperability, lifecycle management,\nand premature ossification. This article revisits lessons from\nIoT and Internet evolution, and articulates design principles for\nbuilding resilient, evolvable, and trustworthy agentic systems. We\npresent an architectural blueprint encompassing agentic identity,\nsecure agent-to-agent communication, semantic interoperability,\npolicy-governed runtimes, and observability-driven governance.\nWe argue that treating evolution, trust, and interoperability as\nfirst-class requirements is essential to avoid hard-coding today’s\nassumptions into tomorrow’s intelligent infrastructure, and to\nprevent the high technical and economic cost of getting it wrong",
+    "pdf": "files/pdf/260315900v1.pdf",
+    "published": true
+  }
+]
