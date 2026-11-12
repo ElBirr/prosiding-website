@@ -3,61 +3,219 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Repository publikasi prosiding Universitas Muhammadiyah Kudus.">
-  <title>UMKU Proceedings</title>
-  <link rel="icon" href="./assets/images/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <script defer src="./assets/js/app.js"></script>
-  <script defer src="./assets/js/home.js"></script>
+  <title>E-Prosiding Universitas Muhammadiyah Kudus — Prosiding Ilmiah</title>
+  <meta name="description" content="E-Prosiding Universitas Muhammadiyah Kudus: repository publikasi ilmiah dari seminar, konferensi, dan forum akademik UMKU. Telusuri, baca, dan unduh artikel.">
+  <link rel="canonical" href="https://elbirr.github.io/prosiding-website/">
+  <meta name="theme-color" content="#0e2a47">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="E-Prosiding Universitas Muhammadiyah Kudus">
+  <meta property="og:title" content="E-Prosiding Universitas Muhammadiyah Kudus">
+  <meta property="og:description" content="Repository publikasi ilmiah dari seminar, konferensi, dan forum akademik Universitas Muhammadiyah Kudus.">
+  <meta property="og:url" content="https://elbirr.github.io/prosiding-website/">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script defer src="assets/js/lib.js"></script>
+  <script defer src="assets/js/app.js"></script>
+  <script defer src="assets/js/home.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "E-Prosiding Universitas Muhammadiyah Kudus",
+    "url": "https://elbirr.github.io/prosiding-website/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Universitas Muhammadiyah Kudus"
+    }
+  }
+  </script>
 </head>
 <body>
-  <div id="site-header"></div>
-  <main>
+  <a class="skip-link" href="#main" data-i18n="skipToContent">Lewati ke konten</a>
+
+  <header class="site-header">
+    <div class="utility-bar">
+      <div class="container utility-inner">
+        <span data-site="institution">Universitas Muhammadiyah Kudus</span>
+        <nav aria-label="Bahasa">
+          <a href="about.html" data-i18n="navAbout">Tentang</a>
+          <a href="contact.html" data-i18n="navContact">Kontak</a>
+          <button class="lang-toggle" type="button" data-lang-toggle data-i18n-aria="languageLabel">EN</button>
+        </nav>
+      </div>
+    </div>
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" data-logo aria-hidden="true">E</span>
+        <span class="brand-text">
+          <strong>E-Prosiding</strong>
+          <small>Universitas Muhammadiyah Kudus</small>
+        </span>
+      </a>
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="main-nav">
+        <span data-menu-label>Menu</span>
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="Navigasi utama">
+        <a href="index.html" aria-current="page" data-i18n="navHome">Beranda</a>
+        <a href="about.html" data-i18n="navAbout">Tentang</a>
+        <a href="issue.html" data-i18n="navCurrent">Edisi Terkini</a>
+        <a href="archive.html" data-i18n="navArchive">Arsip</a>
+        <a href="editorial-team.html" data-i18n="navEditorial">Dewan Editor</a>
+        <a href="author-guidelines.html" data-i18n="navGuidelines">Panduan Penulis</a>
+        <a href="contact.html" data-i18n="navContact">Kontak</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <p class="eyebrow" data-i18n="eyebrow">UNIVERSITAS MUHAMMADIYAH KUDUS</p>
-          <h1 data-i18n="heroTitle">Gagasan, penelitian, dan inovasi dalam satu ruang.</h1>
-          <p class="hero-copy" data-i18n="heroCopy">Jelajahi kumpulan artikel ilmiah yang diterbitkan dalam prosiding kegiatan akademik UMKU.</p>
-          <form class="search-box" id="hero-search">
-            <label class="sr-only" for="hero-query" data-i18n="searchLabel">Cari artikel</label>
-            <input id="hero-query" name="q" type="search" placeholder="Cari judul, penulis, atau kata kunci..." data-i18n-placeholder="searchPlaceholder">
-            <button class="button button-dark" type="submit" data-i18n="searchButton">Cari artikel</button>
+          <p class="eyebrow" data-i18n="heroEyebrow">Prosiding Universitas Muhammadiyah Kudus</p>
+          <h1 data-i18n="heroTitle">E-Prosiding Universitas Muhammadiyah Kudus</h1>
+          <p class="hero-copy" data-i18n="heroCopy">Kumpulan artikel ilmiah dari seminar, konferensi, dan forum akademik UMKU. Telusuri, baca, dan unduh karya yang telah dipublikasikan.</p>
+          <form class="search-form" id="hero-search" role="search">
+            <label class="sr-only" for="hero-query" data-i18n="searchArticles">Cari artikel</label>
+            <input id="hero-query" name="q" type="search" autocomplete="off" data-i18n-placeholder="searchPlaceholder" placeholder="Cari judul, penulis, atau kata kunci…">
+            <button class="btn btn-primary" type="submit" data-i18n="searchButton">Cari</button>
           </form>
-          <a class="text-link" href="./archive.html" data-i18n="browseArchive">Jelajahi seluruh arsip →</a>
+          <div class="action-row">
+            <a class="btn btn-outline" href="archive.html" data-i18n="browseArchive">Jelajahi arsip</a>
+            <a class="btn btn-ghost" href="author-guidelines.html" data-i18n="guidelinesButton">Panduan penulis</a>
+          </div>
         </div>
-        <aside class="hero-note">
-          <span class="note-mark">UMKU</span>
-          <p data-i18n="heroNote">Knowledge grows when research is shared.</p>
-          <span class="note-line"></span>
-          <small>PROCEEDINGS REPOSITORY</small>
+        <aside class="journal-card">
+          <h2 data-i18n="journalInfo">Informasi terbitan</h2>
+          <dl class="info-list">
+            <div data-site-item>
+              <dt data-i18n="publisherLabel">Penerbit</dt>
+              <dd data-site="publisher">Universitas Muhammadiyah Kudus</dd>
+            </div>
+            <div data-site-item>
+              <dt data-i18n="frequencyLabel">Frekuensi</dt>
+              <dd data-site="frequency"></dd>
+            </div>
+            <div data-site-item>
+              <dt data-i18n="openAccessLabel">Akses terbuka</dt>
+              <dd data-site="open_access"></dd>
+            </div>
+            <div data-site-item>
+              <dt data-i18n="contactLabel">Kontak</dt>
+              <dd><a data-site="contact_email" href="contact.html"></a></dd>
+            </div>
+          </dl>
         </aside>
       </div>
     </section>
 
-    <section class="container stats-row" aria-label="Repository statistics">
-      <div class="stat"><strong id="stat-articles">—</strong><span data-i18n="statArticles">Artikel terbit</span></div>
-      <div class="stat"><strong id="stat-years">—</strong><span data-i18n="statYears">Tahun publikasi</span></div>
-      <div class="stat"><strong id="stat-events">—</strong><span data-i18n="statEvents">Nama prosiding</span></div>
-    </section>
-
-    <section class="container section">
-      <div class="section-heading">
-        <div><p class="eyebrow" data-i18n="latestEyebrow">PUBLIKASI</p><h2 data-i18n="latestTitle">Artikel terbaru</h2></div>
-        <a class="text-link" href="./archive.html" data-i18n="viewAll">Lihat semua →</a>
-      </div>
-      <div id="latest-articles" class="article-grid">
-        <div class="empty-state">Memuat artikel…</div>
+    <section class="stats" aria-labelledby="stats-title">
+      <h2 class="sr-only" id="stats-title" data-i18n="statsLabel">Statistik publikasi</h2>
+      <div class="container stats-grid">
+        <div class="stat"><strong id="stat-articles">0</strong><span data-i18n="statsArticles">Artikel terbit</span></div>
+        <div class="stat"><strong id="stat-years">0</strong><span data-i18n="statsYears">Tahun terbit</span></div>
+        <div class="stat"><strong id="stat-issues">0</strong><span data-i18n="statsIssues">Edisi</span></div>
       </div>
     </section>
 
-    <section class="callout">
-      <div class="container callout-inner">
-        <div><p class="eyebrow" data-i18n="aboutEyebrow">TENTANG REPOSITORY</p><h2 data-i18n="aboutTitle">Mendokumentasikan pengetahuan untuk masa depan.</h2></div>
-        <a class="button button-outline" href="./about.html" data-i18n="aboutButton">Tentang repository</a>
+    <p class="container muted small" id="loading-note" data-i18n="loading">Memuat…</p>
+
+    <section class="section" id="current-issue-section" aria-labelledby="current-issue-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="current-issue-title" data-i18n="currentIssueTitle">Edisi terkini</h2>
+        </div>
+        <p class="section-lead" data-i18n="currentIssueCopy">Terbitan terbaru yang tersedia di repository.</p>
+        <div id="home-issue"></div>
+      </div>
+    </section>
+
+    <section class="section section--soft" aria-labelledby="latest-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 id="latest-title" data-i18n="latestTitle">Artikel terbaru</h2>
+            <p class="section-lead" data-i18n="latestCopy">Publikasi terbaru dari seluruh edisi.</p>
+          </div>
+          <a class="link-arrow" href="archive.html" data-i18n="latestAll">Lihat semua artikel</a>
+        </div>
+        <div class="article-grid" id="latest-articles"></div>
+      </div>
+    </section>
+
+    <section class="section" id="home-archive-section" aria-labelledby="home-archive-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 id="home-archive-title" data-i18n="archiveTitle">Arsip</h2>
+            <p class="section-lead" data-i18n="archiveCopy">Telusuri terbitan berdasarkan tahun, volume, dan nomor.</p>
+          </div>
+          <a class="link-arrow" href="archive.html" data-i18n="archiveLink">Lihat arsip lengkap</a>
+        </div>
+        <ul class="year-list" id="home-archive"></ul>
+      </div>
+    </section>
+
+    <section class="section section--soft" aria-labelledby="home-about-title">
+      <div class="container split">
+        <div>
+          <h2 id="home-about-title" data-i18n="aboutTitle">Tentang prosiding</h2>
+          <p data-site="description"></p>
+        </div>
+        <div class="action-row">
+          <a class="btn btn-outline" href="about.html" data-i18n="aboutMore">Selengkapnya</a>
+          <a class="btn btn-ghost" href="contact.html" data-i18n="contactButton">Hubungi kami</a>
+        </div>
       </div>
     </section>
   </main>
-  <div id="site-footer"></div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html">
+            <span class="brand-mark" aria-hidden="true">E</span>
+            <span class="brand-text">
+              <strong>E-Prosiding</strong>
+              <small>Universitas Muhammadiyah Kudus</small>
+            </span>
+          </a>
+          <p data-site="description"></p>
+        </div>
+        <div>
+          <h2 data-i18n="footerExplore">Jelajahi</h2>
+          <ul class="footer-links">
+            <li><a href="archive.html" data-i18n="navArchive">Arsip</a></li>
+            <li><a href="issue.html" data-i18n="navCurrent">Edisi Terkini</a></li>
+            <li><a href="editorial-team.html" data-i18n="navEditorial">Dewan Editor</a></li>
+            <li><a href="reviewers.html" data-i18n="navReviewers">Reviewer</a></li>
+            <li><a href="author-guidelines.html" data-i18n="navGuidelines">Panduan Penulis</a></li>
+            <li><a href="ethics.html" data-i18n="navEthics">Etika Publikasi</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 data-i18n="footerPublisher">Penerbit</h2>
+          <ul class="footer-meta">
+            <li data-site="institution">Universitas Muhammadiyah Kudus</li>
+            <li data-site="publisher">Universitas Muhammadiyah Kudus</li>
+            <li data-site-item><a data-site="contact_email" href="contact.html"></a></li>
+            <li><a href="contact.html" data-i18n="footerContact">Kontak</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span data-year>2026</span> Universitas Muhammadiyah Kudus. <span data-i18n="footerRights">Hak cipta dilindungi.</span></p>
+        <p data-i18n="footerManaged">Dikelola oleh Universitas Muhammadiyah Kudus.</p>
+      </div>
+    </div>
+  </footer>
+
+  <noscript>
+    <div class="container notice">Halaman ini memerlukan JavaScript untuk menampilkan data artikel. Anda tetap dapat membuka <a href="archive.html">arsip</a> atau <a href="data/articles.json">berkas data artikel</a> secara langsung. / This page needs JavaScript to load article data.</div>
+  </noscript>
 </body>
 </html>

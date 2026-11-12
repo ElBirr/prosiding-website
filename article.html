@@ -3,19 +3,110 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Detail artikel prosiding UMKU.">
-  <title>Detail Artikel — UMKU Proceedings</title>
-  <link rel="icon" href="./assets/images/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <script defer src="./assets/js/app.js"></script>
-  <script defer src="./assets/js/article.js"></script>
+  <title>Artikel — E-Prosiding Universitas Muhammadiyah Kudus</title>
+  <meta name="description" content="Detail artikel prosiding Universitas Muhammadiyah Kudus: abstrak, informasi artikel, sitasi, dan dokumen PDF.">
+  <link rel="canonical" href="https://elbirr.github.io/prosiding-website/article.html">
+  <meta name="theme-color" content="#0e2a47">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="E-Prosiding Universitas Muhammadiyah Kudus">
+  <meta property="og:title" content="Artikel — E-Prosiding Universitas Muhammadiyah Kudus">
+  <meta property="og:description" content="Detail artikel prosiding Universitas Muhammadiyah Kudus.">
+  <meta property="og:url" content="https://elbirr.github.io/prosiding-website/article.html">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script defer src="assets/js/lib.js"></script>
+  <script defer src="assets/js/app.js"></script>
+  <script defer src="assets/js/article.js"></script>
 </head>
-<body>
-  <div id="site-header"></div>
-  <main class="container page-main">
-    <a class="back-link" href="./archive.html" data-i18n="backArchive">← Kembali ke arsip</a>
-    <div id="article-detail"><div class="empty-state">Memuat artikel…</div></div>
+<body data-page="article">
+  <a class="skip-link" href="#main" data-i18n="skipToContent">Lewati ke konten</a>
+
+  <header class="site-header">
+    <div class="utility-bar">
+      <div class="container utility-inner">
+        <span data-site="institution">Universitas Muhammadiyah Kudus</span>
+        <nav aria-label="Bahasa">
+          <a href="about.html" data-i18n="navAbout">Tentang</a>
+          <a href="contact.html" data-i18n="navContact">Kontak</a>
+          <button class="lang-toggle" type="button" data-lang-toggle data-i18n-aria="languageLabel">EN</button>
+        </nav>
+      </div>
+    </div>
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" data-logo aria-hidden="true">E</span>
+        <span class="brand-text">
+          <strong>E-Prosiding</strong>
+          <small>Universitas Muhammadiyah Kudus</small>
+        </span>
+      </a>
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="main-nav">
+        <span data-menu-label>Menu</span>
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="Navigasi utama">
+        <a href="index.html" data-i18n="navHome">Beranda</a>
+        <a href="about.html" data-i18n="navAbout">Tentang</a>
+        <a href="issue.html" data-i18n="navCurrent">Edisi Terkini</a>
+        <a href="archive.html" aria-current="page" data-i18n="navArchive">Arsip</a>
+        <a href="editorial-team.html" data-i18n="navEditorial">Dewan Editor</a>
+        <a href="author-guidelines.html" data-i18n="navGuidelines">Panduan Penulis</a>
+        <a href="contact.html" data-i18n="navContact">Kontak</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page-main" id="main">
+    <nav class="breadcrumbs" id="breadcrumbs" aria-label="Breadcrumb"></nav>
+    <div id="article-detail"></div>
   </main>
-  <div id="site-footer"></div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html">
+            <span class="brand-mark" aria-hidden="true">E</span>
+            <span class="brand-text">
+              <strong>E-Prosiding</strong>
+              <small>Universitas Muhammadiyah Kudus</small>
+            </span>
+          </a>
+          <p data-site="description"></p>
+        </div>
+        <div>
+          <h2 data-i18n="footerExplore">Jelajahi</h2>
+          <ul class="footer-links">
+            <li><a href="archive.html" data-i18n="navArchive">Arsip</a></li>
+            <li><a href="issue.html" data-i18n="navCurrent">Edisi Terkini</a></li>
+            <li><a href="editorial-team.html" data-i18n="navEditorial">Dewan Editor</a></li>
+            <li><a href="reviewers.html" data-i18n="navReviewers">Reviewer</a></li>
+            <li><a href="author-guidelines.html" data-i18n="navGuidelines">Panduan Penulis</a></li>
+            <li><a href="ethics.html" data-i18n="navEthics">Etika Publikasi</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 data-i18n="footerPublisher">Penerbit</h2>
+          <ul class="footer-meta">
+            <li data-site="institution">Universitas Muhammadiyah Kudus</li>
+            <li data-site="publisher">Universitas Muhammadiyah Kudus</li>
+            <li data-site-item><a data-site="contact_email" href="contact.html"></a></li>
+            <li><a href="contact.html" data-i18n="footerContact">Kontak</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span data-year>2026</span> Universitas Muhammadiyah Kudus. <span data-i18n="footerRights">Hak cipta dilindungi.</span></p>
+        <p data-i18n="footerManaged">Dikelola oleh Universitas Muhammadiyah Kudus.</p>
+      </div>
+    </div>
+  </footer>
+
+  <noscript>
+    <div class="container notice">Halaman ini memerlukan JavaScript untuk menampilkan artikel. Seluruh data tersedia di <a href="data/articles.json">data/articles.json</a>. / This page needs JavaScript to load the article.</div>
+  </noscript>
 </body>
 </html>

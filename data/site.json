@@ -1,6 +1,17 @@
 {
-  "site_name": "TEST Proceedings",
-  "institution": "Universitas Mualai",
+  "site_name": "E-Prosiding Universitas Muhammadiyah Kudus",
+  "short_name": "E-Prosiding UMKU",
+  "institution": "Universitas Muhammadiyah Kudus",
+  "publisher": "Universitas Muhammadiyah Kudus",
+  "description": "Repository publikasi ilmiah yang menghimpun artikel dari seminar, konferensi, dan forum akademik Universitas Muhammadiyah Kudus.",
+  "base_url": "https://elbirr.github.io/prosiding-website/",
+  "logo": "",
+  "address": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "frequency": "",
+  "open_access": "",
   "default_language": "id",
   "additional_language": "en"
 }
