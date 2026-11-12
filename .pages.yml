@@ -1,0 +1,100 @@
+media:
+  - name: article_pdfs
+    label: Article PDFs
+    input: files/pdf
+    output: files/pdf
+    extensions:
+      - pdf
+    rename: safe
+  - name: images
+    label: Images
+    input: assets/images
+    output: assets/images
+    extensions:
+      - png
+      - jpg
+      - jpeg
+      - webp
+      - svg
+
+content:
+  - name: articles
+    label: Articles
+    type: file
+    path: data/articles.json
+    format: json
+    list: true
+    fields:
+      - name: id
+        label: Article ID
+        type: string
+        required: true
+      - name: title
+        label: Article title
+        type: string
+        required: true
+      - name: authors
+        label: Authors
+        type: string
+        required: true
+      - name: year
+        label: Publication year
+        type: number
+        required: true
+      - name: event
+        label: Proceedings / event
+        type: string
+      - name: abstract
+        label: Abstract
+        type: text
+        required: true
+      - name: keywords
+        label: Keywords
+        type: string
+      - name: pdf
+        label: PDF file
+        type: file
+        required: true
+        options:
+          media: article_pdfs
+          extensions:
+            - pdf
+      - name: published
+        label: Published
+        type: boolean
+
+  - name: site
+    label: Site settings
+    type: file
+    path: data/site.json
+    format: json
+    fields:
+      - name: site_name
+        label: Site name
+        type: string
+      - name: institution
+        label: Institution
+        type: string
+      - name: contact_email
+        label: Contact email
+        type: string
+      - name: default_language
+        label: Default language
+        type: select
+        options:
+          values:
+            - id
+            - en
+      - name: additional_language
+        label: Additional language
+        type: select
+        options:
+          values:
+            - id
+            - en
+
+settings:
+  content:
+    merge: false
+  commit:
+    identity: user

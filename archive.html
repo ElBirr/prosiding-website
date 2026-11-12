@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Arsip artikel prosiding Universitas Muhammadiyah Kudus.">
+  <title>Arsip Artikel — UMKU Proceedings</title>
+  <link rel="icon" href="./assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script defer src="./assets/js/app.js"></script>
+  <script defer src="./assets/js/archive.js"></script>
+</head>
+<body>
+  <div id="site-header"></div>
+  <main class="container page-main">
+    <div class="page-intro">
+      <p class="eyebrow" data-i18n="archiveEyebrow">PUSAT PUBLIKASI</p>
+      <h1 data-i18n="archiveTitle">Arsip prosiding</h1>
+      <p data-i18n="archiveCopy">Telusuri artikel berdasarkan judul, penulis, tahun, atau kata kunci.</p>
+    </div>
+    <section class="filter-panel">
+      <label class="search-box archive-search">
+        <span class="sr-only" data-i18n="searchLabel">Cari artikel</span>
+        <input id="archive-query" type="search" placeholder="Cari artikel..." data-i18n-placeholder="searchPlaceholder">
+      </label>
+      <label class="filter-label"><span data-i18n="filterYear">Tahun</span>
+        <select id="year-filter"><option value="" data-i18n="allYears">Semua tahun</option></select>
+      </label>
+      <label class="filter-label"><span data-i18n="filterEvent">Prosiding</span>
+        <select id="event-filter"><option value="" data-i18n="allEvents">Semua prosiding</option></select>
+      </label>
+    </section>
+    <div class="results-bar"><span id="result-count"></span><span id="sort-label" data-i18n="newestFirst">Terbaru lebih dahulu</span></div>
+    <div id="archive-list" class="article-list"><div class="empty-state">Memuat artikel…</div></div>
+  </main>
+  <div id="site-footer"></div>
+</body>
+</html>
