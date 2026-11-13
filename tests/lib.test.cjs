@@ -1,7 +1,7 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
 const {
-  escapeHTML, filterArticles, sortArticles, groupIssuesByYear, citationAPA, citationIEEE, formatAuthors
+  escapeHTML, filterArticles, sortArticles, groupIssuesByYear, citationAPA, citationIEEE, formatAuthors, authorName
 } = require("../assets/js/lib.js");
 
 const articles = [
@@ -40,6 +40,9 @@ test("formatAuthors joins arrays and trims strings", () => {
   assert.equal(formatAuthors(["A", " B "]), "A, B");
   assert.equal(formatAuthors("A and B "), "A and B");
   assert.equal(formatAuthors(undefined), "");
+  assert.equal(formatAuthors([{ name: "Roberto Morabito" }, { name: "Mallik Tatipamula" }]), "Roberto Morabito, Mallik Tatipamula");
+  assert.equal(authorName({ name: "A" }), "A");
+  assert.equal(authorName(" A "), "A");
 });
 
 test("filterArticles matches query, year, volume, issue", () => {
@@ -49,6 +52,10 @@ test("filterArticles matches query, year, volume, issue", () => {
   assert.deepEqual(filterArticles(articles, { volume: "1", issue: "2" }).map(a => a.id), ["002"]);
   assert.deepEqual(filterArticles(articles, { year: "1999" }), []);
   assert.deepEqual(filterArticles(articles, { query: "morabito" }).map(a => a.id), ["001"]);
+  assert.deepEqual(
+    filterArticles([{ id: "003", title: "X", authors: [{ name: "Siti Aminah" }], year: 2026 }], { query: "aminah" }).map(a => a.id),
+    ["003"]
+  );
 });
 
 test("sortArticles puts dated items first, then year, then id", () => {

@@ -566,6 +566,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .detail-main h1 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); line-height: 1.35; }
 .detail-authors { font-size: var(--text-lg); font-weight: 500; margin-bottom: var(--space-2); }
 .detail-affiliations { color: var(--muted); font-size: var(--text-sm); }
+.detail-subtitle { font-size: var(--text-lg); color: var(--muted); margin-bottom: var(--space-2); }
 .detail-main .action-row { margin: var(--space-4) 0 var(--space-5); }
 
 .content-section { margin-top: var(--space-6); }
@@ -581,6 +582,21 @@ button, input, select, textarea { font: inherit; color: inherit; }
   color: var(--muted);
   background: var(--bg-soft);
 }
+
+.author-list { display: grid; gap: var(--space-4); }
+.author-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-soft);
+  padding: var(--space-4);
+}
+.author-card h3 { font-size: 1.0625rem; margin-bottom: var(--space-1); }
+.author-card p { margin-bottom: var(--space-2); font-size: var(--text-sm); }
+.author-card p:last-child { margin-bottom: 0; }
+.author-card__links { display: flex; flex-wrap: wrap; gap: var(--space-3); font-size: var(--text-xs); }
+.author-card__links a { border-bottom: 1px solid var(--accent-line); }
+.author-card__links a:hover { color: var(--accent); }
+.author-card__bio { color: var(--ink); line-height: 1.7; }
 
 .panel {
   border: 1px solid var(--line);
@@ -640,6 +656,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .person-card h3 { font-size: 1.0625rem; margin-bottom: var(--space-1); }
 .person-card p { margin-bottom: var(--space-1); font-size: var(--text-sm); }
 .person-card__meta { color: var(--muted); font-size: var(--text-xs); }
+.person-card__bio { color: var(--muted); font-size: var(--text-sm); }
 .team-group { margin-bottom: var(--space-6); }
 
 /* ---------- Prose, notices, empty ---------- */

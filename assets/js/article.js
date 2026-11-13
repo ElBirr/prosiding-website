@@ -19,8 +19,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   const issue = sortIssues(publishedIssues(issues)).find(item => cleanValue(item.id) === cleanValue(article.issue_id));
   const pdf = pdfUrl(article.pdf);
   const title = cleanValue(article.title) || t("untitled");
+  const subtitle = cleanValue(article.subtitle);
   const authors = formatAuthors(article.authors);
   const affiliation = formatKeywords(article.affiliations);
+  const authorList = Array.isArray(article.authors)
+    ? article.authors.filter(author => author && typeof author === "object" && cleanValue(author.name))
+    : [];
+  const hasAuthorProfiles = authorList.some(author => ["affiliation", "country", "orcid", "email", "bio"].some(key => cleanValue(author[key])));
   const keywords = Array.isArray(article.keywords)
     ? article.keywords.map(cleanValue).filter(Boolean)
     : cleanValue(article.keywords).split(",").map(value => value.trim()).filter(Boolean);
@@ -47,10 +52,27 @@ document.addEventListener("DOMContentLoaded", async () => {
     { label: t("citationIEEE"), text: citationIEEE(article, container, pageUrl) }
   ];
 
+  const authorCards = authorList.map(author => {
+    const place = [cleanValue(author.affiliation), cleanValue(author.country)].filter(Boolean).join(", ");
+    const orcid = cleanValue(author.orcid);
+    const email = cleanValue(author.email);
+    const links = [
+      orcid ? `<a href="https://orcid.org/${escapeHTML(orcid)}" target="_blank" rel="noopener">ORCID: ${escapeHTML(orcid)}</a>` : "",
+      email ? `<a href="mailto:${escapeHTML(email)}">${escapeHTML(email)}</a>` : ""
+    ].filter(Boolean).join(" ");
+    return `<article class="author-card">
+      <h3>${escapeHTML(author.name)}</h3>
+      ${place ? `<p class="muted">${escapeHTML(place)}</p>` : ""}
+      ${links ? `<p class="author-card__links">${links}</p>` : ""}
+      ${cleanValue(author.bio) ? `<p class="author-card__bio">${escapeHTML(author.bio)}</p>` : ""}
+    </article>`;
+  }).join("");
+
   target.innerHTML = `<article class="detail">
     <div class="detail-main">
       <p class="eyebrow">${issue ? `<a href="${issueUrl(issue.id)}">${escapeHTML(issueDisplayTitle(issue))}</a>` : t("articleEyebrow")}${cleanValue(article.year) ? ` · ${escapeHTML(article.year)}` : ""}</p>
       <h1>${escapeHTML(title)}</h1>
+      ${subtitle ? `<p class="detail-subtitle">${escapeHTML(subtitle)}</p>` : ""}
       ${authors ? `<p class="detail-authors">${escapeHTML(authors)}</p>` : ""}
       ${affiliation ? `<p class="detail-affiliations">${escapeHTML(affiliation)}</p>` : ""}
       ${actions}
@@ -61,6 +83,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       ${keywords.length ? `<section class="content-section">
         <h2>${t("keywords")}</h2>
         <ul class="tag-list">${keywords.map(keyword => `<li>${escapeHTML(keyword)}</li>`).join("")}</ul>
+      </section>` : ""}
+      ${hasAuthorProfiles ? `<section class="content-section">
+        <h2>${t("authorBiographies")}</h2>
+        <div class="author-list">${authorCards}</div>
       </section>` : ""}
       <section class="content-section">
         <h2>${t("citationTitle")}</h2>
@@ -83,6 +109,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           ${metaRow(t("issueNumber"), issue ? issue.issue : article.issue)}
           ${metaRow(t("filterYear"), article.year)}
           ${metaRow(t("publicationDate"), formatDate(article.publication_date, currentLanguage))}
+          ${metaRow(t("articleLanguage"), article.language)}
           ${metaRow(t("pages"), article.pages)}
           ${metaRow(t("articleId"), article.id)}
           ${doi ? `<dt>${t("doi")}</dt><dd><a href="https://doi.org/${escapeHTML(doi)}" target="_blank" rel="noopener">${escapeHTML(doi)}</a></dd>` : ""}

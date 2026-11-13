@@ -67,7 +67,7 @@ def check_sections(name):
 
 
 def main():
-    articles = check_list("articles.json", ["id", "title", "authors", "year", "pdf"])
+    articles = check_list("articles.json", ["id", "title", "year", "pdf"])
     issues = check_list("issues.json", ["id", "title", "year"])
     check_list("editors.json", ["name"])
     check_list("reviewers.json", ["name"])
@@ -83,6 +83,18 @@ def main():
         if not isinstance(article, dict):
             continue
         label = f"data/articles.json[{index}] ('{article.get('id', '?')}')"
+        authors = article.get("authors")
+        if isinstance(authors, str):
+            if not authors.strip():
+                ERRORS.append(f"{label}: authors is required")
+        elif isinstance(authors, list):
+            if not authors:
+                ERRORS.append(f"{label}: authors is required")
+            for author_index, author in enumerate(authors):
+                if not isinstance(author, dict) or not str(author.get("name", "")).strip():
+                    ERRORS.append(f"{label}: authors[{author_index}].name is required")
+        else:
+            ERRORS.append(f"{label}: authors must be a string or a list of author objects")
         pdf = article.get("pdf")
         if pdf and not os.path.isfile(os.path.join(ROOT, pdf)):
             ERRORS.append(f"{label}: pdf file not found: {pdf}")

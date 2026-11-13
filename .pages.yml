@@ -33,10 +33,36 @@ content:
         label: Article title
         type: string
         required: true
+      - name: subtitle
+        label: Subtitle
+        type: string
       - name: authors
         label: Authors
-        type: string
+        type: object
+        list: true
         required: true
+        fields:
+          - name: name
+            label: Name
+            type: string
+            required: true
+          - name: affiliation
+            label: Affiliation
+            type: string
+          - name: country
+            label: Country
+            type: string
+          - name: orcid
+            label: ORCID iD
+            type: string
+            description: ORCID iD only, for example 0000-0002-1825-0097.
+          - name: email
+            label: Email
+            type: string
+          - name: bio
+            label: Biography
+            type: text
+            description: Shown in the Author Biographies section on the article page.
       - name: affiliations
         label: Affiliations
         type: string
@@ -68,6 +94,10 @@ content:
       - name: publication_date
         label: Publication date
         type: date
+      - name: language
+        label: Language
+        type: string
+        description: Language of the article, for example en or id.
       - name: abstract
         label: Abstract
         type: text
@@ -215,6 +245,15 @@ content:
       - name: email
         label: Email
         type: string
+      - name: country
+        label: Country
+        type: string
+      - name: orcid
+        label: ORCID iD
+        type: string
+      - name: bio
+        label: Biography
+        type: text
 
   - name: reviewers
     label: Reviewers
@@ -236,6 +275,15 @@ content:
       - name: email
         label: Email
         type: string
+      - name: country
+        label: Country
+        type: string
+      - name: orcid
+        label: ORCID iD
+        type: string
+      - name: bio
+        label: Biography
+        type: text
 
   - name: page_about
     label: Page — About

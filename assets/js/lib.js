@@ -12,8 +12,13 @@ function escapeHTML(value = "") {
   }[char]));
 }
 
+function authorName(author) {
+  if (author && typeof author === "object") return cleanValue(author.name);
+  return cleanValue(author);
+}
+
 function formatAuthors(authors) {
-  if (Array.isArray(authors)) return authors.map(cleanValue).filter(Boolean).join(", ");
+  if (Array.isArray(authors)) return authors.map(authorName).filter(Boolean).join(", ");
   return cleanValue(authors);
 }
 
@@ -126,7 +131,7 @@ function citationIEEE(article, container = "", url = "") {
 
 if (typeof module !== "undefined" && module.exports) {
   module.exports = {
-    cleanValue, escapeHTML, formatAuthors, formatKeywords, truncate, formatDate,
+    cleanValue, escapeHTML, formatAuthors, authorName, formatKeywords, truncate, formatDate,
     articleHaystack, filterArticles, sortArticles, sortIssues, groupIssuesByYear,
     citationAPA, citationIEEE
   };

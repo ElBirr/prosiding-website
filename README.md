@@ -44,11 +44,13 @@ Supporting files:
 | --- | --- | --- |
 | `id` | yes | Stable unique ID, e.g. `001`. Used in `article.html?id=001`, never reuse it. |
 | `title` | yes | Full article title. |
-| `authors` | yes | One string, e.g. `"Roberto Morabito and Mallik Tatipamula"`. |
+| `authors` | yes | List of author objects. Each needs `name`; `affiliation`, `country`, `orcid`, `email` and `bio` are optional and shown in the Author Biographies section. |
 | `abstract` | yes | Plain text. |
 | `year` | yes | Number. |
 | `pdf` | yes | Relative path, e.g. `files/pdf/260315900v1.pdf`. |
 | `published` | yes | Boolean. Only `true` records are shown. |
+| `subtitle` | no | Shown under the title. |
+| `language` | no | Article language, e.g. `en` or `id`. |
 | `issue_id` | no | Must match an `id` in `data/issues.json`. |
 | `affiliations`, `keywords`, `volume`, `issue`, `pages`, `doi`, `publication_date`, `event` | no | Empty values are hidden in the interface. |
 
@@ -88,8 +90,8 @@ with *"Bagian ini belum diisi oleh pengelola."* Fill these in Pages CMS:
 
 - [ ] `data/site.json`: `contact_email`, `contact_phone`, `address`, `website`,
       `frequency`, `open_access`, optional `logo`.
-- [ ] `data/editors.json`: editor-in-chief, managing editor, editorial board.
-- [ ] `data/reviewers.json`: reviewer names, affiliations, expertise.
+- [ ] `data/editors.json`: editor-in-chief, managing editor, editorial board (name, affiliation, country, ORCID, email, expertise, bio).
+- [ ] `data/reviewers.json`: reviewer names, affiliations, expertise, country, ORCID, email, bio.
 - [ ] `data/page-about.json`: focus and scope, open access policy, frequency.
 - [ ] `data/page-ethics.json`: all seven ethics sections.
 - [ ] `data/page-guidelines.json`: all seven guideline sections.
